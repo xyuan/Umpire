@@ -17,6 +17,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 
 - Added statistic gathering capability to `replay`
 
+- Added "unset" operations for removing CUDA memory advice.
+
 - Extended C/Fortran API with more allocation strategies.
 
 - NamedAllocator that allows creating a new allocator that passes allocations
@@ -27,6 +29,15 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 
 - Replay logs now contain information about operations. These are not yet
   replayed.
+
+- Replay now can display information allocators used in a replay session.
+
+- Replay now can replay `NUMA` and `AllocationPreference` allocations.
+
+- Added `getLargestAvailableBlock` metric to dynamic list and map pools
+
+- Added documentation and recipe for `ThreadSafeAllocator`
+
 
 ### Changed
 
@@ -59,6 +70,10 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 
 - Fixed replay test the replay tool as well as validate the output from
   running umpire with REPLAY turned on.
+
+- Fixed compilation errors when `-DENABLE_NUMA=On`.
+
+- Fixed reallocate to properly handle case where size == 0
 
 ## [1.1.0] - 2019-09-14
 
